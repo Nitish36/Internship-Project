@@ -17,7 +17,7 @@ st_ca       = st.slider("No. of major vessels(0-3):",0,3,2)
 st_thal     = st.slider("Thal normal=1,fixed defect=2,reversable defect=3",1,3,2)
 st_target   = ['Less chance of heart attack','More chance of heart attack']
 
-new = pickle.load(open('predict','rb'))
+new = pickle.load(open('test','rb'))
 y_pred = new.predict([[st_age,st_sex,st_cp,st_trestbps,st_chol,st_fbs,st_restecg,st_thalach,st_exang,st_old,st_slope,st_ca,st_thal]])
 y_pred = st_target[y_pred[0]]
 clicked = st.button("Test")
