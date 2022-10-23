@@ -1,4 +1,3 @@
-from scikit-learn import sklearn
 import pickle
 import streamlit as st
 st.title("Heart Disease Prediction")
