@@ -29,3 +29,37 @@ if(clicked):
 		st.error('Error running analysis')
 
 #streamlit run app.py
+
+SCRIPT_STR
+(
+    "
+        import pandas as pd
+        import numpy as np
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.preprocessing import StandardScaler
+        from ast import literal_eval
+
+        d = {
+        'age':literal_eval(_arg1[0]),
+        'ca':literal_eval(_arg2[0]),
+        'chol':literal_eval(_arg3[0]),
+        'cp':literal_eval(_arg4[0]),
+        'exang':literal_eval(_arg5[0]),
+        'fbs':literal_eval(_arg6[0]),
+        'oldpeak':literal_eval(_arg7[0]),
+        'restecg':literal_eval(_arg8[0]),
+        'sex':literal_eval(_arg9[0]),
+        'slope':literal_eval(_arg10[0]),
+        'thal':literal_eval(_arg11[0]),
+        'thalach':literal_eval(_arg12[0]),
+        'trestbps':literal_eval(_arg13[0]),
+        }
+    ",ATTR([Age]),ATTR([Ca]),ATTR([Chol]),
+       ATTR([Cp]),ATTR([Exang]),ATTR([Fbs]),
+       ATTR([Oldpeak]),ATTR([Restecg]),ATTR([Sex]),
+       ATTR([Slope]),ATTR([Thal]),ATTR([Thalach]),
+       ATTR([Trestbps]),
+        [age],[ca],[chol],[cp],[exang],[fbs],
+        [oldpeak],[restecg],[sex],[slope],[thal],
+        [thalach],[trestbps]
+)
